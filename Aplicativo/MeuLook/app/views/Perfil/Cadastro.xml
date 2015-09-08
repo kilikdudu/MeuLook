@@ -8,14 +8,8 @@
 			<View height="Ti.UI.SIZE" top=5>
 				<Widget src="GUI" name="LblTextField" id="sobrenome" />
 			</View>
-			<View height="Ti.UI.SIZE" top=10>
-				<Widget src="GUI" name="DateInput" id="dataNascimento" />
-			</View>
 			<View height="Ti.UI.SIZE" top=5>
 				<Widget src="GUI" name="LblTextField" id="email" onBlur="validaEmail" />
-			</View>
-			<View height="Ti.UI.SIZE" top=5>
-				<Widget src="GUI" name="LblTextField" id="cpf" onBlur="validaCpf" /> 
 			</View>
 			<View height="Ti.UI.SIZE" top=5>
 				<Widget src="GUI" name="LblTextField" id="login" />

@@ -11,7 +11,6 @@
 exports.definition = {
 	config: {
 		columns: {
-		    "CodigoUAU": "integer",
 		    "CloudId": "varchar PRIMARY KEY",
 		    "Login": "varchar",
 		    "SessionId": "varchar" 

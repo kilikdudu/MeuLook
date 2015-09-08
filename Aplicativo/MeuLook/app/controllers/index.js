@@ -8,6 +8,8 @@ var args = arguments[0] || {};
 
 var semaforoLogin = false;
 
+var CloudService = Alloy.createWidget("CloudService", "Login");
+
 function updateLoginStatus() {
 	if(semaforoLogin){return;}
 	semaforoLogin = true;
@@ -20,8 +22,7 @@ function updateLoginStatus() {
 	        function (e) {
 				 if (e.success) {
 				 	var user = e.users[0];
-				 	Alloy.Globals.InfoUser = user;
-	                solicitacoes.salvarCliente({sessionId: Alloy.Globals.Cloud.sessionId, id: user.id});
+	                CloudService.gravaUsuario(user);
 	                callbackOK();
 	            }
 				else {
@@ -41,11 +42,6 @@ function loginFacebook(e){
 	Alloy.Globals.Facebook.authorize();
 }
 
-/**
- * @property {widgets.Login.SolicitacoesLogin} solicitacoes Classe responsável por buscar o dominio da empresa vinculada ao token e validar o login e senha neste domínio.
- * @private 
- */
-var solicitacoes = Alloy.createController("SolicitacoesLogin");
 
 /**
  * @method callbackOK
@@ -75,9 +71,9 @@ var callbackOK = function(){
  * @alteracao 21/01/2015 176562 Projeto Carlos Eduardo Santos Alves Domingos
  * Criação.
  */
-var callbackNaoOK = function(mensagem){
+var callbackNaoOK = function(e){
 	try{
-		Alloy.Globals.Alerta("Erro ao entrar", mensagem);
+		Alloy.Globals.Alerta("Erro ao entrar", e.message);
 		Alloy.Globals.carregou();
 	}
 	catch(e){
@@ -105,24 +101,11 @@ function init(){
 	}
 }
 
-if(Alloy.Globals.Cliente.length > 0){
-	Alloy.Globals.Cloud.sessionId = Alloy.Globals.Cliente.at(0).get("sessionId");
-	Alloy.Globals.Cloud.Users.showMe(function(e){
-		if (e.success) {
-	        var user = e.users[0];
-	        Alloy.Globals.InfoUser = user;
-	        callbackOK();    
-	    } else {
-			Alloy.Globals.Transicao.nova($, init, {});        
-	    }
-	});
-	
-}
-else{
-	//Abro a janela.
+CloudService.checkLogin({sucess: callbackOK, fail: abrirJanela});
+
+function abrirJanela(){
 	Alloy.Globals.Transicao.nova($, init, {});
 }
-
 
 function checkLogin(){
 	try{
@@ -130,16 +113,17 @@ function checkLogin(){
 		var check = Alloy.createWidget("GUI", "Mensagem");
 		if($.login.getInputValue() == ""){
 			check.init("Alerta", "Informe o login.");
+			Alloy.Globals.carregou();
 			check.show({callback: $.login.selecionar});
 			return;
 		}
 		if($.senha.getInputValue() == ""){
 			check.init("Alerta", "Preencha a senha.");
+			Alloy.Globals.carregou();
 			check.show({callback: $.senha.selecionar});
 			return;
 		}
-		solicitacoes.executeLogin(callbackOK, callbackNaoOK, 
-			{login: $.login.getInputValue(), senha: $.senha.getInputValue()});
+		CloudService.checkLogin({Login: $.login.getInputValue(), Senha: $.senha.getInputValue(), sucess: callbackOK, fail: callbackNaoOK});
 	}
 	catch(e){
 		Alloy.Globals.onError(e.message, "checkLogin", "app/widgets/Login/controllers/login.js");

@@ -39,7 +39,7 @@ Alloy.Globals.MainColorLight = "#bbeaa2";
  * Endereço do domínio da empresa. Instanciado após o login.
  * @type {String}
  */
-Alloy.Globals.MainDomain = "http://192.168.25.191:8484/";
+Alloy.Globals.MainDomain = "http://192.168.25.191:8282/";
 
 //Acesso a nuvem do appcelerator
 var Cloud = require('ti.cloud');
@@ -51,7 +51,7 @@ Alloy.Globals.Facebook = require('facebook');
 Alloy.Globals.Facebook.permissions = ["public_profile", "email"];
 //Alloy.Globals.Facebook.addEventListener('logout', finalizarLogout);
 
-Alloy.Globals.CloudPush = require('ti.cloudpush');
+/*Alloy.Globals.CloudPush = require('ti.cloudpush');
 Alloy.Globals.deviceToken = null; 
 Alloy.Globals.CloudPush.retrieveDeviceToken({
         success: function deviceTokenSuccess(e) {
@@ -85,7 +85,7 @@ Ti.App.addEventListener("devitokenObtido", function(e){
 Alloy.Globals.Map = require('ti.map');
 
 Alloy.Globals.Cliente = Alloy.createCollection("Cliente");
-Alloy.Globals.Cliente.fetch();
+Alloy.Globals.Cliente.fetch(); */
 
 /**
  * @property {Object} InfoUser Dados do usuário no ACS. 
