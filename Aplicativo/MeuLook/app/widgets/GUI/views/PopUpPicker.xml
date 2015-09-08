@@ -1,0 +1,13 @@
+<Alloy>
+	<View id="conteudo">
+		<View id="boxTitulo">
+			<Label id="titulo" class="descricaoTitulo" />
+		</View>
+		<Picker id="picker" type="Ti.UI.PICKER_TYPE_DATE" onChange="alteraValor" /> 
+		<View id="boxBtn">
+			<Button id="btnOk" onClick="clickOk" class="CustomButton">Ok</Button>
+			<Button id="btnCancel" onClick="clickCancel" class="CustomButton">Cancelar</Button>
+		</View>
+		<View height="10" />
+	</View>
+</Alloy>

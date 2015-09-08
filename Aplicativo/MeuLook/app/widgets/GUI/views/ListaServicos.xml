@@ -1,0 +1,9 @@
+<Alloy>
+	<View id="mestre" width="Ti.UI.FILL" height="Ti.UI.FILL">
+		<Widget src="GUI" name="Camada" id="camada" />
+		<View id="boxListaServicos"> 
+			<ImageView id="logo" />
+			<TableView id="servicos" onClick="clickRowSection" />
+		</View>
+	</View>
+</Alloy>

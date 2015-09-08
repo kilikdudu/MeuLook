@@ -1,0 +1,47 @@
+"#boxSearchView": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL
+}
+"#lupa": {
+	width: 30,
+	height: 30,
+	left: 10,
+	image: "/images/lupa.png"
+}
+"#input[platform=android]": {
+	color: "black",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	font: {fontSize: 18},
+	backgroundColor: 'transparent',
+	bottom: 2,
+	left: 50,
+	right: 50,
+	hintText: "Pesquisar..."
+}
+"#input[platform=ios]": {
+	color: "black",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	font: {fontSize: 18},
+	backgroundColor: 'transparent',
+	height: 40,
+	bottom: 2,
+	left: 50,
+	right: 50,
+	hintText: "Pesquisar..."
+}
+"#btnBuscar": {
+	backgroundColor: 'transparent',
+	backgroundSelectedColor: "#E6E6E6",
+	backgroundImage: "/images/vai.png",
+	height: 30,
+	width: 30,
+	right: 10,
+	borderRadius: 8
+}
+"#linhaBaixo": {
+	backgroundColor: "black",
+	height: 1,
+	left: 10,
+	right: 10,
+	bottom: 5
+}

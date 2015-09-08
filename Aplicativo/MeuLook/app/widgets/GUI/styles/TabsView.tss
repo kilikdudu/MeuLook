@@ -1,0 +1,18 @@
+"#conteudoTabs": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL
+}
+"#boxTabsView": {
+	showPagingControl: false,
+	backgroundColor: "white",
+	top: 40,
+	bottom: 0,
+	width: Titanium.UI.FILL
+}
+"#pagingControl": {
+	backgroundColor: "white",
+	layout: "horizontal",
+	horizontalWrap: false,
+	height: 40,
+	top: 0
+}

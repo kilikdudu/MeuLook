@@ -1,0 +1,13 @@
+"#boxButton": {
+	backgroundColor: "transparent",
+	backgroundSelectedColor: "#E6E6E6",
+	borderRadius: 8,
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+"#descricao": {
+	left: 5
+}
+"#imagem": {
+	left: 5
+}

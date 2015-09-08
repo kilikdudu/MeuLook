@@ -1,0 +1,54 @@
+"#conteudo": {
+	width: "80%",
+	height: Titanium.UI.SIZE,
+	layout: "vertical",
+	backgroundColor: "white",
+	borderRadius: 4
+}
+"#boxTitulo": {
+	top: 10,
+	width: "90%",
+	left: "5%",
+	height: Titanium.UI.SIZE
+}
+"#titulo": {
+	color: Alloy.Globals.MainColor,
+	height: Titanium.UI.SIZE,
+	width: "70%",
+	left: 0,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT
+}
+"#texto": {
+	width: "90%",
+	left: "5%",
+	top: 10,
+	height: Titanium.UI.SIZE,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	color: "#595959"
+}
+"#boxBtn": {
+	width: Titanium.UI.FILL,
+	height: Alloy.Globals.CustomComponentHeight,
+	backgroundColor: "transparent",
+	top: 5
+}
+"#btnOk": {
+	width: "50%",
+	left: "25%",
+	height: "90%",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	color: Alloy.Globals.MainColor,
+	backgroundSelectedColor: "#B6B6B6",
+	borderRadius: 4,
+	backgroundColor: 'transparent'
+}
+"#btnCancel": {
+	width: 0,
+	height: "90%",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	color: Alloy.Globals.MainColor,
+	backgroundSelectedColor: "#B6B6B6",
+	enabled: false,
+	borderRadius: 4,
+	backgroundColor: 'transparent'
+}

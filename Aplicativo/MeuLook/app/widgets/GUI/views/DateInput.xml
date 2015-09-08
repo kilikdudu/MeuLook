@@ -1,0 +1,10 @@
+<Alloy>
+	<View class="TextFieldBox"> 
+		<Label id="lblDesc" class="TextFieldTitle" />
+		<View id="boxControles">  
+			<Label id="selectedDate" text="" /> 
+			<View id="linhaDesc" class="divisoria" />
+			<Button id="btCalendario" onClick="abrirPicker" />
+		</View> 
+	</View>
+</Alloy>

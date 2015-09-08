@@ -1,0 +1,149 @@
+/*Classes gerais*/
+".CustomButton[formFactor=handheld]": {
+	height: 40,
+	backgroundColor: Alloy.Globals.MainColor,
+	backgroundSelectedColor: Alloy.Globals.MainColorLight,
+	width: Titanium.UI.FILL,
+	font: {fontSize: 16},
+	borderRadius: 4,
+	color: "white"
+}
+".CustomButton[formFactor=tablet]": {
+	height: 60,
+	backgroundColor: Alloy.Globals.MainColor,
+	backgroundSelectedColor: Alloy.Globals.MainColorLight,
+	width: Titanium.UI.FILL,
+	font: {fontSize: 20},
+	borderRadius: 4,
+	color: "white"
+}
+".Camada": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.Fill,
+	top: 0,
+	left: 0,
+	backgroundColor: "black",
+	opacity: 0.6
+}
+".TextFieldBox": {
+	layout: "vertical",
+	height: 70,
+	width: "90%",
+	left: "5%",
+	backgroundColor: "transparent"
+}
+".TextFieldTitle": {
+	width: Titanium.UI.FILL,
+	height: 30,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	color: "#595959"
+}
+".RowDetail": {
+	width: Titanium.UI.FILL,
+	backgroundColor: "white",
+	height: Titanium.UI.SIZE,
+	backgroundSelectedColor: "#E6E6E6"
+}
+".divisoria[formFactor=tablet]": {
+	height: 1
+}
+".divisoria[formFactor=handheld]": {
+	height: 0.5
+}
+".janela[formFactor=tablet]": {
+	top: 0,
+	bottom: 0,
+	left: 0,
+	right: 0,
+	backgroundColor: "white"
+}
+".janela[formFactor=handheld]": {
+	top: 0,
+	bottom: 0,
+	left: 0,
+	right: 0,
+	backgroundColor: "white",
+	orientationModes: [Titanium.UI.PORTRAIT]
+}
+".titulo[formFactor=handheld]": {
+	font: {fontSize: 22}
+}
+".titulo[formFactor=tablet]": {
+	font: {fontSize: 26}
+}
+".descricaoTitulo[formFactor=handheld]": {
+	font: {fontSize: 20},
+	color: "black"
+}
+".descricaoTitulo[formFactor=tablet]": {
+	font: {fontSize: 24},
+	color: "black"
+}
+".descricao[formFactor=handheld]": {
+	font: {fontSize: 16},
+	color: "#505050"
+}
+".descricao[formFactor=tablet]": {
+	font: {fontSize: 20},
+	color: "#505050"
+}
+".sombra": {
+	width: Titanium.UI.FILL,
+	height: 1,
+	backgroundGradient: {
+		type: "linear",
+		startPoint: {x: 0.0, y: 0.0},
+		endPoint: {x:0.0, y: '100%'},
+		colors: ["#4E4E4E", "white"]
+	},
+	bottom: 0
+}
+
+".tituloRowLista": { 
+	width: "90%",
+	left: "5%",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT
+}
+".descricaoRowLista": {
+	width: "90%",
+	left: "9%",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	wordWrap: false,
+	ellipsize: true
+}
+".meuSwitch[platform=android]": {
+	style: Titanium.UI.Android.SWITCH_STYLE_SWITCH,
+	backgroundSelectedColor: 'transparent'
+}
+".meuSwitch[platform=ios]": {
+	onTintColor: Alloy.Globals.MainColor,
+	tintColor: "#E6E6E6",
+}
+".shadowView[platform=android]": {
+	//backgroundImage: "/images/dropShadow.png",
+	backgroundColor: "white",
+	borderWidth: 1,
+	borderColor: "#c3c3c3",
+	borderRadius: 2
+}
+".shadowView[platform=ios]": {
+	viewShadowColor:"#787878",
+	viewShadowOffset: 1,
+	backgroundColor: "white"
+}
+/*Fim classes gerais*/
+/*Config componentes gerais*/
+"ListView": {
+	separatorColor: 'transparent'
+}
+"TableView": {
+	separatorColor: 'transparent'
+}
+"TableViewRow[platform=ios]": {
+	backgroundSelectedColor: 'transparent',
+	selectionStyle: Titanium.UI.iPhone.TableViewCellSelectionStyle.NONE 
+}
+"TableViewRow[platform=android]": {
+	backgroundSelectedColor: 'transparent' 
+}
+/*Fim config componentes gerais*/

@@ -1,0 +1,6 @@
+<Alloy>
+	<View id="LblTextBox">  
+		<Label id="lblDesc" class="TextFieldTitle" /> 
+		<TextArea id="desc" />
+	</View>
+</Alloy>

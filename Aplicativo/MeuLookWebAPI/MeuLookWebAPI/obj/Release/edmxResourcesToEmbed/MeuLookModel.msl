@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="meulookModelStoreContainer" CdmEntityContainer="meulookEntities">
+    <EntitySetMapping Name="avaliacoes">
+      <EntityTypeMapping TypeName="meulookModel.avaliacoes">
+        <MappingFragment StoreEntitySet="avaliacoes">
+          <ScalarProperty Name="IdAvaliacao" ColumnName="IdAvaliacao" />
+          <ScalarProperty Name="FotoPosts_IdPost" ColumnName="FotoPosts_IdPost" />
+          <ScalarProperty Name="Notas_IdNota" ColumnName="Notas_IdNota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="denuncia">
+      <EntityTypeMapping TypeName="meulookModel.denuncia">
+        <MappingFragment StoreEntitySet="denuncia">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Usuarios_cloudId" ColumnName="Usuarios_cloudId" />
+          <ScalarProperty Name="FotoPosts_IdPost" ColumnName="FotoPosts_IdPost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fotoposts">
+      <EntityTypeMapping TypeName="meulookModel.fotoposts">
+        <MappingFragment StoreEntitySet="fotoposts">
+          <ScalarProperty Name="IdPost" ColumnName="IdPost" />
+          <ScalarProperty Name="DataPost" ColumnName="DataPost" />
+          <ScalarProperty Name="ImagemPost" ColumnName="ImagemPost" />
+          <ScalarProperty Name="Usuarios_cloudId" ColumnName="Usuarios_cloudId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notas">
+      <EntityTypeMapping TypeName="meulookModel.notas">
+        <MappingFragment StoreEntitySet="notas">
+          <ScalarProperty Name="IdNota" ColumnName="IdNota" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="meulookModel.usuarios">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="Alcance" ColumnName="Alcance" />
+          <ScalarProperty Name="cloudId" ColumnName="cloudId" />
+          <ScalarProperty Name="QtdeAvaliacao" ColumnName="QtdeAvaliacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

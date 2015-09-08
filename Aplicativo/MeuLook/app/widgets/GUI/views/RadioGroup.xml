@@ -1,0 +1,8 @@
+<Alloy>
+	<View layout="vertical" >
+		<Label class="TextFieldTitle" id="groupTitle" />
+		<View width="Titanium.UI.FILL" height="Ti.UI.SIZE">
+			<View id="listaSwitch" />
+		</View>
+	</View> 
+</Alloy>

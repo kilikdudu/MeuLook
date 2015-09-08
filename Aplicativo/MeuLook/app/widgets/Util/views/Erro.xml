@@ -1,0 +1,19 @@
+<Alloy>
+	<ScrollView id="boxErro">
+		<Widget src="GUI" name="Camada" />
+		<View id="conteudoErro">
+			<Label id="titulo" text="Controle de erros" class="titulo" />
+			<View height="0.5" width="90%" left="5%" backgroundColor="black"   />
+			<ScrollView id="boxDescErro">
+				<Label id="descErro" class="descricao" />
+			</ScrollView>
+			<View id="boxDesc">
+				<Widget src="GUI" name="LblTextBox" id="descUsuario" />
+			</View>
+			<View id="boxBtn">
+				<Button id="btnEnviar" onClick="enviarClick" class="CustomButton">Enviar e sair</Button>
+				<Button id="btnCancelar" onClick="cancelarClick" class="CustomButton">Sair</Button>
+			</View>
+		</View>
+	</ScrollView>
+</Alloy>

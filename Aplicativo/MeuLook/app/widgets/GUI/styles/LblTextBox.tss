@@ -1,0 +1,29 @@
+
+"#desc[platform=android]": {
+	width: Titanium.UI.FILL,
+	color: "black",
+	backgroundColor: "#E6E6E6",
+	height: "80%",
+	font:{fontSize: Alloy.Globals.CustomTextSize},
+	softKeyboardOnFocus : Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS,
+	borderRadius: 4,
+	borderWidth: 0.5,
+	borderColor: "#B2B2B2"
+}
+"#desc[platform=ios]": {
+	width: Titanium.UI.FILL,
+	color: "black",
+	backgroundColor: "#E6E6E6",
+	height: "80%",
+	font:{fontSize: Alloy.Globals.CustomTextSize},
+	borderRadius: 4,
+	borderWidth: 0.5,
+	borderColor: "#B2B2B2"
+}
+"#LblTextBox": {
+	layout: 'vertical',
+	width: "90%",
+	height: Titanium.UI.FILL,
+	left: "5%",
+	right: "5%"
+}

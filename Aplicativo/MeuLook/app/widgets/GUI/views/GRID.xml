@@ -1,0 +1,6 @@
+<Alloy>
+	<View id="mainBox">
+		<View id="Headers"></View>
+		<View id="TabelaGRID" />
+	</View>
+</Alloy>

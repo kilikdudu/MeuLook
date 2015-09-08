@@ -1,0 +1,10 @@
+<Alloy>
+	<View class="TextFieldBox"> 
+		<Label id="lblDesc" class="TextFieldTitle" />
+		<View id="boxControles">  
+			<Label id="selectedDesc" chave="" />
+			<View id="linhaDesc" class="divisoria" />
+			<Button id="btList" onClick="listar" />
+		</View> 
+	</View>
+</Alloy>

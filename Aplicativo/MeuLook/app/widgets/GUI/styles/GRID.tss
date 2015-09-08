@@ -1,0 +1,18 @@
+
+"#mainBox": {
+  width: Titanium.UI.FILL,
+  height: Titanium.UI.FILL,
+  layout: 'vertical',
+  borderWidth: 0.5,
+  borderColor: "color"
+}
+"#Headers": {
+	width: Titanium.UI.FILL,
+	height: "10%",
+	layout: 'horizontal',
+	backgroundColor: Alloy.Globals.MainColor
+}
+"#TabelaGRID": {
+	width: Titanium.UI.FILL,
+	height: "90%"
+}

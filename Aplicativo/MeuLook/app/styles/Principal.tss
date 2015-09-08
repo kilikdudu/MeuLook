@@ -1,0 +1,28 @@
+"#boxCabecalho": {
+	width: Titanium.UI.FILL,
+	height: 50,
+	top: 0,
+	backgroundColor: Alloy.Globals.MainColor
+}
+"#boxInfo": {
+	left: 10,
+	layout: 'horizontal',
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.FILL,
+}
+"#logoEmpresa": {
+	height: 38,
+	top: 6,
+	image: "/images/logobranca.png"
+}
+"#lblEmpresa": {
+	font: {fontSize: 18},
+	color: "white",
+	left: 7,
+	height: Titanium.UI.FILL
+}
+"#conteudo": {
+	width: Titanium.UI.FILL,
+	top: 50,
+	bottom: 0
+}

@@ -1,0 +1,19 @@
+<Alloy>
+	<Window id="janela" class="janela" >
+		<ScrollView id="caixa" >
+			<ImageView id="logo" />
+			<View class="BoxLogin">
+				<View height="Ti.UI.SIZE" top=10>
+					<Widget src="GUI" name="LblTextField" id="login" />
+				</View>
+				<View height="Ti.UI.SIZE" top=10>
+					<Widget src="GUI" name="LblTextField" id="senha" />
+				</View>
+				<Button width="90%" left="5%" id="btLogin" class="CustomButton" onClick="checkLogin" top=10 >Entrar</Button>
+				<Button width="90%" left="5%" id="btCadastro" class="CustomButton" onClick="abrirCadastro" top=10 >Cadastre-se</Button>
+				<Button id="fbButton" class="CustomButton" onClick="loginFacebook" width="90%" left="5%" top=10 >Entrar com facebook</Button>
+				<View height="20" />
+			</View>	 
+		</ScrollView>
+	</Window>
+</Alloy>

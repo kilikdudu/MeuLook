@@ -1,0 +1,4 @@
+"#boxCamada": {
+	height: Titanium.UI.FILL,
+	width: Titanium.UI.FILL
+}

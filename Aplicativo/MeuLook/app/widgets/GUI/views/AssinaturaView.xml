@@ -1,0 +1,14 @@
+<Alloy>
+	<View id="mestre"> 
+		<Label class="titulo" id="titulo" zIndex="2">Assinatura</Label>
+		<View class="divisoria" top="38" backgroundColor="black" width="90%" zIndex="2" />
+		<View id="boxAssinatura" /> 
+		<View id="boxBotoes"> 
+			<Button class="CustomButton" left="0" id="btnLimpar" onClick="limpar"  >Limpar</Button>
+			<View id="auxBotao" > 
+				<Button class="CustomButton" id="btnConfirmar"  >Confirmar</Button>
+				<Button class="CustomButton" id="btnCancelar" onClick="fechar" left="10" >Cancelar</Button>
+			</View>
+		</View>
+	</View>
+</Alloy>

@@ -1,0 +1,9 @@
+<Alloy>
+	<View id="containerLog" >
+		<Label class="titulo" id="titulo" />
+		<ScrollView id="conteudo" >
+			<Label class="descricao" id="mensagem" />	
+		</ScrollView>
+		<Button class="CustomButton" id="btnOK" onClick="clickOk">Ok</Button>
+	</View>
+</Alloy>

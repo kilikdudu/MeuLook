@@ -1,0 +1,6 @@
+<Alloy>
+	<View id="conteudoTabs">
+		<View id="pagingControl"/>
+		<ScrollableView id="boxTabsView" cacheSize="3" />
+	</View>
+</Alloy>

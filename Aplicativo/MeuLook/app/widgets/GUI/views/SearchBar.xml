@@ -1,0 +1,8 @@
+<Alloy>
+	<View id="boxSearchView"> 
+		<ImageView id="lupa" />
+		<TextField id="input" onChange="alterando" /> 
+		<Button id="btnBuscar" onClick="buscar" />
+		<View id="linhaBaixo" />
+	</View>
+</Alloy>

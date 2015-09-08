@@ -1,0 +1,5 @@
+<Alloy>
+	<View id="boxSwitcher">
+		<Label id="carro" text="Não" />
+	</View>
+</Alloy>

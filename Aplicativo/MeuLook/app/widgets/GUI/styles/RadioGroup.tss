@@ -1,0 +1,11 @@
+"#groupTitle": {
+  width:Titanium.UI.FILL, 
+  textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+  wordWrap: true,
+  height: Titanium.UI.SIZE
+}
+"#listaSwitch": {
+	width: Titanium.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: "vertical"
+}

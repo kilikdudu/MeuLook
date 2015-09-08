@@ -1,0 +1,13 @@
+<Alloy>
+	<View id="conteudoPopUp"> 
+		<View id="boxTitulo">
+			<Label id="tituloPopUp" />
+		</View>
+		<View id="barraBusca" >
+			<Widget src="GUI" name="SearchBar" onChange="buscar" id="schBusca" autoSearch="true" />
+		</View>
+		<Label id="lblEmpty" />
+		<TableView id="listaPopUp" onClick="clickOk" onLongclick="empty" onLongpress="longFunction" /> 
+		<Button id="btnCancelar" onClick="clickCancelar" class="CustomButton">Cancelar</Button>
+	</View> 
+</Alloy>

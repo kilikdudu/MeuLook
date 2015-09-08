@@ -1,0 +1,8 @@
+
+"#conteudo": {
+	top: 50,
+	bottom: 0,
+	width: Titanium.UI.FILL,
+	layout: 'vertical',
+	backgroundColor: "white"
+}

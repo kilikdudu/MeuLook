@@ -1,0 +1,8 @@
+<Alloy>
+	<View id="boxButton" >
+		<View width="Titanium.UI.SIZE" height="Titanium.UI.SIZE" layout="horizontal" >
+			<ImageView id="imagem" />
+			<Label id="descricao" />
+		</View>		
+	</View>
+</Alloy>

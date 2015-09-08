@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="meulookModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="avaliacoes">
+          <Key>
+            <PropertyRef Name="IdAvaliacao" />
+          </Key>
+          <Property Name="IdAvaliacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FotoPosts_IdPost" Type="int" Nullable="false" />
+          <Property Name="Notas_IdNota" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="denuncia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Usuarios_cloudId" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="FotoPosts_IdPost" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fotoposts">
+          <Key>
+            <PropertyRef Name="IdPost" />
+          </Key>
+          <Property Name="IdPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataPost" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ImagemPost" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Usuarios_cloudId" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="notas">
+          <Key>
+            <PropertyRef Name="IdNota" />
+          </Key>
+          <Property Name="IdNota" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="cloudId" />
+          </Key>
+          <Property Name="cloudId" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="QtdeAvaliacao" Type="bigint" Nullable="false" />
+          <Property Name="Alcance" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_Avaliacoes_FotoPosts1">
+          <End Role="fotoposts" Type="Self.fotoposts" Multiplicity="1" />
+          <End Role="avaliacoes" Type="Self.avaliacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fotoposts">
+              <PropertyRef Name="IdPost" />
+            </Principal>
+            <Dependent Role="avaliacoes">
+              <PropertyRef Name="FotoPosts_IdPost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Avaliacoes_Notas1">
+          <End Role="notas" Type="Self.notas" Multiplicity="1" />
+          <End Role="avaliacoes" Type="Self.avaliacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="notas">
+              <PropertyRef Name="IdNota" />
+            </Principal>
+            <Dependent Role="avaliacoes">
+              <PropertyRef Name="Notas_IdNota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Denuncia_FotoPosts1">
+          <End Role="fotoposts" Type="Self.fotoposts" Multiplicity="1" />
+          <End Role="denuncia" Type="Self.denuncia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fotoposts">
+              <PropertyRef Name="IdPost" />
+            </Principal>
+            <Dependent Role="denuncia">
+              <PropertyRef Name="FotoPosts_IdPost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Denuncia_Usuarios1">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="denuncia" Type="Self.denuncia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="cloudId" />
+            </Principal>
+            <Dependent Role="denuncia">
+              <PropertyRef Name="Usuarios_cloudId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_FotoPosts_Usuarios1">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="fotoposts" Type="Self.fotoposts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="cloudId" />
+            </Principal>
+            <Dependent Role="fotoposts">
+              <PropertyRef Name="Usuarios_cloudId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="meulookModelStoreContainer">
+          <EntitySet Name="avaliacoes" EntityType="Self.avaliacoes" Schema="meulook" store:Type="Tables" />
+          <EntitySet Name="denuncia" EntityType="Self.denuncia" Schema="meulook" store:Type="Tables" />
+          <EntitySet Name="fotoposts" EntityType="Self.fotoposts" Schema="meulook" store:Type="Tables" />
+          <EntitySet Name="notas" EntityType="Self.notas" Schema="meulook" store:Type="Tables" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="meulook" store:Type="Tables" />
+          <AssociationSet Name="fk_Avaliacoes_FotoPosts1" Association="Self.fk_Avaliacoes_FotoPosts1">
+            <End Role="fotoposts" EntitySet="fotoposts" />
+            <End Role="avaliacoes" EntitySet="avaliacoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Avaliacoes_Notas1" Association="Self.fk_Avaliacoes_Notas1">
+            <End Role="notas" EntitySet="notas" />
+            <End Role="avaliacoes" EntitySet="avaliacoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Denuncia_FotoPosts1" Association="Self.fk_Denuncia_FotoPosts1">
+            <End Role="fotoposts" EntitySet="fotoposts" />
+            <End Role="denuncia" EntitySet="denuncia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Denuncia_Usuarios1" Association="Self.fk_Denuncia_Usuarios1">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="denuncia" EntitySet="denuncia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_FotoPosts_Usuarios1" Association="Self.fk_FotoPosts_Usuarios1">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="fotoposts" EntitySet="fotoposts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="meulookModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="avaliacoes">
+          <Key>
+            <PropertyRef Name="IdAvaliacao" />
+          </Key>
+          <Property Name="IdAvaliacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FotoPosts_IdPost" Type="Int32" Nullable="false" />
+          <Property Name="Notas_IdNota" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="fotoposts" Relationship="Self.fk_Avaliacoes_FotoPosts1" FromRole="avaliacoes" ToRole="fotoposts" />
+          <NavigationProperty Name="notas" Relationship="Self.fk_Avaliacoes_Notas1" FromRole="avaliacoes" ToRole="notas" />
+        </EntityType>
+        <EntityType Name="denuncia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Usuarios_cloudId" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FotoPosts_IdPost" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="fotoposts" Relationship="Self.fk_Denuncia_FotoPosts1" FromRole="denuncia" ToRole="fotoposts" />
+          <NavigationProperty Name="usuarios" Relationship="Self.fk_Denuncia_Usuarios1" FromRole="denuncia" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="fotoposts">
+          <Key>
+            <PropertyRef Name="IdPost" />
+          </Key>
+          <Property Name="IdPost" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataPost" Type="DateTime" Nullable="false" />
+          <Property Name="ImagemPost" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Usuarios_cloudId" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="avaliacoes" Relationship="Self.fk_Avaliacoes_FotoPosts1" FromRole="fotoposts" ToRole="avaliacoes" />
+          <NavigationProperty Name="denuncia" Relationship="Self.fk_Denuncia_FotoPosts1" FromRole="fotoposts" ToRole="denuncia" />
+          <NavigationProperty Name="usuarios" Relationship="Self.fk_FotoPosts_Usuarios1" FromRole="fotoposts" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="notas">
+          <Key>
+            <PropertyRef Name="IdNota" />
+          </Key>
+          <Property Name="IdNota" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="avaliacoes" Relationship="Self.fk_Avaliacoes_Notas1" FromRole="notas" ToRole="avaliacoes" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="cloudId" />
+          </Key>
+          <Property Name="cloudId" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QtdeAvaliacao" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="denuncia" Relationship="Self.fk_Denuncia_Usuarios1" FromRole="usuarios" ToRole="denuncia" />
+          <NavigationProperty Name="fotoposts" Relationship="Self.fk_FotoPosts_Usuarios1" FromRole="usuarios" ToRole="fotoposts" />
+          <Property Name="Alcance" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_Avaliacoes_FotoPosts1">
+          <End Role="fotoposts" Type="Self.fotoposts" Multiplicity="1" />
+          <End Role="avaliacoes" Type="Self.avaliacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fotoposts">
+              <PropertyRef Name="IdPost" />
+            </Principal>
+            <Dependent Role="avaliacoes">
+              <PropertyRef Name="FotoPosts_IdPost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Avaliacoes_Notas1">
+          <End Role="notas" Type="Self.notas" Multiplicity="1" />
+          <End Role="avaliacoes" Type="Self.avaliacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="notas">
+              <PropertyRef Name="IdNota" />
+            </Principal>
+            <Dependent Role="avaliacoes">
+              <PropertyRef Name="Notas_IdNota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Denuncia_FotoPosts1">
+          <End Role="fotoposts" Type="Self.fotoposts" Multiplicity="1" />
+          <End Role="denuncia" Type="Self.denuncia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fotoposts">
+              <PropertyRef Name="IdPost" />
+            </Principal>
+            <Dependent Role="denuncia">
+              <PropertyRef Name="FotoPosts_IdPost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Denuncia_Usuarios1">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="denuncia" Type="Self.denuncia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="cloudId" />
+            </Principal>
+            <Dependent Role="denuncia">
+              <PropertyRef Name="Usuarios_cloudId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_FotoPosts_Usuarios1">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="fotoposts" Type="Self.fotoposts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="cloudId" />
+            </Principal>
+            <Dependent Role="fotoposts">
+              <PropertyRef Name="Usuarios_cloudId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="meulookEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="avaliacoes" EntityType="Self.avaliacoes" />
+          <EntitySet Name="denuncia" EntityType="Self.denuncia" />
+          <EntitySet Name="fotoposts" EntityType="Self.fotoposts" />
+          <EntitySet Name="notas" EntityType="Self.notas" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" />
+          <AssociationSet Name="fk_Avaliacoes_FotoPosts1" Association="Self.fk_Avaliacoes_FotoPosts1">
+            <End Role="fotoposts" EntitySet="fotoposts" />
+            <End Role="avaliacoes" EntitySet="avaliacoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Avaliacoes_Notas1" Association="Self.fk_Avaliacoes_Notas1">
+            <End Role="notas" EntitySet="notas" />
+            <End Role="avaliacoes" EntitySet="avaliacoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Denuncia_FotoPosts1" Association="Self.fk_Denuncia_FotoPosts1">
+            <End Role="fotoposts" EntitySet="fotoposts" />
+            <End Role="denuncia" EntitySet="denuncia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Denuncia_Usuarios1" Association="Self.fk_Denuncia_Usuarios1">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="denuncia" EntitySet="denuncia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_FotoPosts_Usuarios1" Association="Self.fk_FotoPosts_Usuarios1">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="fotoposts" EntitySet="fotoposts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="meulookModelStoreContainer" CdmEntityContainer="meulookEntities">
+          <EntitySetMapping Name="avaliacoes">
+            <EntityTypeMapping TypeName="meulookModel.avaliacoes">
+              <MappingFragment StoreEntitySet="avaliacoes">
+                <ScalarProperty Name="IdAvaliacao" ColumnName="IdAvaliacao" />
+                <ScalarProperty Name="FotoPosts_IdPost" ColumnName="FotoPosts_IdPost" />
+                <ScalarProperty Name="Notas_IdNota" ColumnName="Notas_IdNota" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="denuncia">
+            <EntityTypeMapping TypeName="meulookModel.denuncia">
+              <MappingFragment StoreEntitySet="denuncia">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Usuarios_cloudId" ColumnName="Usuarios_cloudId" />
+                <ScalarProperty Name="FotoPosts_IdPost" ColumnName="FotoPosts_IdPost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fotoposts">
+            <EntityTypeMapping TypeName="meulookModel.fotoposts">
+              <MappingFragment StoreEntitySet="fotoposts">
+                <ScalarProperty Name="IdPost" ColumnName="IdPost" />
+                <ScalarProperty Name="DataPost" ColumnName="DataPost" />
+                <ScalarProperty Name="ImagemPost" ColumnName="ImagemPost" />
+                <ScalarProperty Name="Usuarios_cloudId" ColumnName="Usuarios_cloudId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="notas">
+            <EntityTypeMapping TypeName="meulookModel.notas">
+              <MappingFragment StoreEntitySet="notas">
+                <ScalarProperty Name="IdNota" ColumnName="IdNota" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="meulookModel.usuarios">
+              <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="Alcance" ColumnName="Alcance" />
+                <ScalarProperty Name="cloudId" ColumnName="cloudId" />
+                <ScalarProperty Name="QtdeAvaliacao" ColumnName="QtdeAvaliacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

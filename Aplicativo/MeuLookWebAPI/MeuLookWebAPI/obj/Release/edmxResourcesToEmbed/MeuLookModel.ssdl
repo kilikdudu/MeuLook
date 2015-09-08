@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="meulookModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="avaliacoes">
+    <Key>
+      <PropertyRef Name="IdAvaliacao" />
+    </Key>
+    <Property Name="IdAvaliacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FotoPosts_IdPost" Type="int" Nullable="false" />
+    <Property Name="Notas_IdNota" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="denuncia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Usuarios_cloudId" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="FotoPosts_IdPost" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fotoposts">
+    <Key>
+      <PropertyRef Name="IdPost" />
+    </Key>
+    <Property Name="IdPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataPost" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ImagemPost" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Usuarios_cloudId" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="notas">
+    <Key>
+      <PropertyRef Name="IdNota" />
+    </Key>
+    <Property Name="IdNota" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="cloudId" />
+    </Key>
+    <Property Name="cloudId" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="QtdeAvaliacao" Type="bigint" Nullable="false" />
+    <Property Name="Alcance" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_Avaliacoes_FotoPosts1">
+    <End Role="fotoposts" Type="Self.fotoposts" Multiplicity="1" />
+    <End Role="avaliacoes" Type="Self.avaliacoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fotoposts">
+        <PropertyRef Name="IdPost" />
+      </Principal>
+      <Dependent Role="avaliacoes">
+        <PropertyRef Name="FotoPosts_IdPost" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Avaliacoes_Notas1">
+    <End Role="notas" Type="Self.notas" Multiplicity="1" />
+    <End Role="avaliacoes" Type="Self.avaliacoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="notas">
+        <PropertyRef Name="IdNota" />
+      </Principal>
+      <Dependent Role="avaliacoes">
+        <PropertyRef Name="Notas_IdNota" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Denuncia_FotoPosts1">
+    <End Role="fotoposts" Type="Self.fotoposts" Multiplicity="1" />
+    <End Role="denuncia" Type="Self.denuncia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fotoposts">
+        <PropertyRef Name="IdPost" />
+      </Principal>
+      <Dependent Role="denuncia">
+        <PropertyRef Name="FotoPosts_IdPost" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Denuncia_Usuarios1">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+    <End Role="denuncia" Type="Self.denuncia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="cloudId" />
+      </Principal>
+      <Dependent Role="denuncia">
+        <PropertyRef Name="Usuarios_cloudId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_FotoPosts_Usuarios1">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+    <End Role="fotoposts" Type="Self.fotoposts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="cloudId" />
+      </Principal>
+      <Dependent Role="fotoposts">
+        <PropertyRef Name="Usuarios_cloudId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="meulookModelStoreContainer">
+    <EntitySet Name="avaliacoes" EntityType="Self.avaliacoes" Schema="meulook" store:Type="Tables" />
+    <EntitySet Name="denuncia" EntityType="Self.denuncia" Schema="meulook" store:Type="Tables" />
+    <EntitySet Name="fotoposts" EntityType="Self.fotoposts" Schema="meulook" store:Type="Tables" />
+    <EntitySet Name="notas" EntityType="Self.notas" Schema="meulook" store:Type="Tables" />
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="meulook" store:Type="Tables" />
+    <AssociationSet Name="fk_Avaliacoes_FotoPosts1" Association="Self.fk_Avaliacoes_FotoPosts1">
+      <End Role="fotoposts" EntitySet="fotoposts" />
+      <End Role="avaliacoes" EntitySet="avaliacoes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Avaliacoes_Notas1" Association="Self.fk_Avaliacoes_Notas1">
+      <End Role="notas" EntitySet="notas" />
+      <End Role="avaliacoes" EntitySet="avaliacoes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Denuncia_FotoPosts1" Association="Self.fk_Denuncia_FotoPosts1">
+      <End Role="fotoposts" EntitySet="fotoposts" />
+      <End Role="denuncia" EntitySet="denuncia" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Denuncia_Usuarios1" Association="Self.fk_Denuncia_Usuarios1">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="denuncia" EntitySet="denuncia" />
+    </AssociationSet>
+    <AssociationSet Name="fk_FotoPosts_Usuarios1" Association="Self.fk_FotoPosts_Usuarios1">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="fotoposts" EntitySet="fotoposts" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

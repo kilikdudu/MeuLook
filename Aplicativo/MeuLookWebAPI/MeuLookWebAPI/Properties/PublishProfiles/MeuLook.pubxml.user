@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>http://localhost:8282/</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>07/09/2015 17:18:41</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>07/09/2015 17:18:41</publishTime>
+    </File>
+    <File Include="bin/MeuLookWebAPI.dll">
+      <publishTime>09/07/2015 22:34:56</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.Entity.EF6.dll">
+      <publishTime>07/11/2014 21:35:52</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/09/2015 17:04:19</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/09/2015 17:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/09/2015 17:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/09/2015 17:04:24</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/09/2015 17:04:17</publishTime>
+    </File>
+    <File Include="MeuLookModel.edmx.diagram">
+      <publishTime>07/09/2015 18:02:17</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/09/2015 17:18:44</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/09/2015 20:14:11</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

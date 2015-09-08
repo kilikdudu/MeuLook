@@ -1,0 +1,61 @@
+"#boxErro": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL
+}
+"#conteudoErro": {
+	width: "80%",
+	height: "80%",
+	layout: "vertical",
+	backgroundColor: 'white',
+	borderRadius: 4
+}
+"#titulo": {
+	width: '90%',
+	left: '5%',
+	height: "10%",
+	color: Alloy.Globals.MainColor,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT
+}
+"#boxDescErro": {
+	width: "90%",
+	left: "5%",
+	height: "30%",
+	top: '5%',
+	scrollingEnabled: true
+}
+"#descErro": {
+	width: Titanium.UI.FILL,
+	left: 0,
+	height: Titanium.UI.SIZE,
+	color: "black",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT
+}
+"#boxDesc": {
+	width: Titanium.UI.FILL,
+	height: "35%",
+	top: "5%"
+}
+"#boxBtn": {
+	width: Titanium.UI.FILL,
+	height: "10%",
+	top: "2%"
+}
+
+"#btnEnviar": {
+	width: "40%",
+	left: "5%",
+	height: Titanium.UI.FILL,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	color: Alloy.Globals.MainColor,
+	backgroundColor: 'transparent',
+	backgroundSelectedColor: "#E6E6E6",
+}
+"#btnCancelar": {
+	width: "40%",
+	right: "5%",
+	height: Titanium.UI.FILL,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	color: Alloy.Globals.MainColor,
+	backgroundColor: 'transparent',
+	backgroundSelectedColor: "#E6E6E6",
+}

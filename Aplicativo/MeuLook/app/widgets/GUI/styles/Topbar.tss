@@ -1,0 +1,38 @@
+"#boxTopBar": {
+	width: Titanium.UI.FILL,
+	height: 50,
+	top: 0,
+	backgroundColor: Alloy.Globals.MainColor
+}
+"#boxListaServico": {
+	width: 50,
+	height: Titanium.UI.FILL,
+	backgroundColor: "transparent",
+	backgroundImage: "/images/list.png",
+	backgroundSelectedColor: Alloy.Globals.MainColorLight,
+	left: 0
+}
+"#titulo": {
+	width: "100%",
+	height: "100%",
+	left: 0,
+	color: "white",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER
+}
+"#boxBotoes": {
+	right: 0,
+	width: Titanium.UI.SIZE,
+	height: 32,
+	backgroundColor: 'transparent'
+}
+"#sombra": {
+	width: Titanium.UI.FILL,
+	height: 1,
+	backgroundGradient: {
+		type: "linear",
+		startPoint: {x: 0.0, y: 0.0},
+		endPoint: {x:0.0, y: '100%'},
+		colors: ["#4E4E4E", "white"]
+	},
+	bottom: 0
+}

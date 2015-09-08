@@ -1,0 +1,16 @@
+"#boxInput[platform=android]": {
+	width: Titanium.UI.FILL,
+	height: 40
+}
+"#boxInput[platform=ios]": {
+	width: Titanium.UI.FILL,
+	height: 32
+}
+"#novoNome": {
+	width: "96%",
+	left: "2%",
+	color: "#292929",
+	backgroundColor: "transparent",
+	height: Titanium.UI.FILL,
+	font:{fontSize: Alloy.Globals.CustomTextSize}
+}

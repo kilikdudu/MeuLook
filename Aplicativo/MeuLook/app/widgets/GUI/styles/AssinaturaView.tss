@@ -1,0 +1,39 @@
+"#titulo": {
+	color: Alloy.Globals.MainColor,
+	width: "90%",
+	top: 5
+}
+"#mestre": {
+	height: "95%",
+	width: "90%",
+	backgroundColor: "white",
+	borderRadius: 8
+}
+"#boxAssinatura": {
+	top: 0,
+	bottom: 0,
+	width: Titanium.UI.FILL
+}
+"#boxBotoes": {
+	bottom: 5,
+	height: 40,
+	width: "90%"
+}
+"#auxBotao": {
+	layout: "horizontal",
+	right: 0,
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+"#btnLimpar": {
+	height: 40,
+	backgroundColor: 'transparent'
+}
+"#btnConfirmar": {
+	height: 40,
+	backgroundColor: 'transparent'
+}
+"#btnCancelar": {
+	height: 40,
+	backgroundColor: 'transparent'
+}
